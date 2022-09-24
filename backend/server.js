@@ -1,6 +1,7 @@
 const { config } = require("dotenv");
 const express = require("express");
 const morgan = require("morgan");
+const mongoose = require("mongoose");
 
 const app = express();
 
@@ -27,6 +28,15 @@ app.post(`${API}/products`, (req, res) => {
   console.log(newProduct);
   res.send(newProduct);
 });
+
+
+
+//Connected to DataBase
+mongoose.connect(process.env.DATA_BASE)
+.then(() => {
+  console.log('DataBase is connected');
+})
+.catch(err => console.log(err))
 
 app.listen(port, () => {
   console.log(API);
