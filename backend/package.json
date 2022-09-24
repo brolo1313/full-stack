@@ -1,0 +1,27 @@
+{
+  "name": "mean-stack",
+  "version": "1.0.0",
+  "description": "e-commerce shop",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brolo1313/full-stack.git"
+  },
+  "keywords": [
+    "full-stack"
+  ],
+  "author": "Yupin A.I.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brolo1313/full-stack/issues"
+  },
+  "homepage": "https://github.com/brolo1313/full-stack#readme",
+  "dependencies": {
+    "node": "^18.9.1",
+    "nodemon": "^2.0.20"
+  }
+}
