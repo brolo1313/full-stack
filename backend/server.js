@@ -29,7 +29,7 @@ app.post(`${API}/products`, (req, res) => {
   res.send(newProduct);
 });
 
-//test
+
 
 //Connected to DataBase
 mongoose.connect(process.env.DATA_BASE)
@@ -38,6 +38,8 @@ mongoose.connect(process.env.DATA_BASE)
 })
 .catch(err => console.log(err))
 
+
+//Server starting
 app.listen(port, () => {
   console.log(API);
   console.log(`server listening on port ${port}`);
