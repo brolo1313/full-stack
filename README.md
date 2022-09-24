@@ -1,4 +1,0 @@
-# full-stack
-
-
-MEAN stack
