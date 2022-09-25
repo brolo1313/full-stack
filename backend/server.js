@@ -51,7 +51,16 @@ app.post(`${API}/products`, (req, res) => {
       success: false
     });
   })
-  // res.send(product);
+});
+
+app.delete(`${API}/products/:id`, function(req, res){
+         
+  const id = req.params.id;
+  Product.findByIdAndDelete(id, function(err, product){
+              
+      if(err) return console.log(err);
+      res.send(product);
+  });
 });
 
 

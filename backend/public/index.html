@@ -8,5 +8,22 @@
 </head>
 <body>
        <h1>Work static page html</h1>
+
+       <script>
+        async function GetProducts() {
+            // отправляет запрос и получаем ответ
+            const response = await fetch("/api/v1/products", {
+                method: "GET",
+                headers: { "Accept": "application/json" }
+            });
+            // если запрос прошел нормально
+            if (response.ok === true) {
+                // получаем данные
+                const products = await response.json();
+                
+            }
+        }
+        GetProducts();
+       </script>
 </body>
 </html>
