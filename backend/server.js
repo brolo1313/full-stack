@@ -3,18 +3,21 @@ const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv/config"); // important
-
-const app = express();
-
-//Router
+const cors = require("cors");
 const productsRouter = require("./routes/product");
 const usersRouter = require("./routes/users");
 
+const app = express();
 
 //Network variables
 const API = process.env.API_URL;
 const port = 3000;
 
+//CORS
+// app.use(cors);
+// app.options('*', cors())
+
+//middleware
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
