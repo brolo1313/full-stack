@@ -6,6 +6,8 @@ const dotenv = require("dotenv/config"); // important
 const cors = require("cors");
 const productsRouter = require("./routes/product");
 const usersRouter = require("./routes/users");
+const authJwt = require("./helpers/jwt");
+
 
 const app = express();
 
@@ -18,6 +20,7 @@ const port = 3000;
 // app.options('*', cors())
 
 //middleware
+app.use(authJwt());
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
