@@ -7,6 +7,7 @@ const cors = require("cors");
 const productsRouter = require("./routes/product");
 const usersRouter = require("./routes/users");
 const authJwt = require("./helpers/jwt");
+const errorHandler = require("./helpers/errorHandler")
 
 
 const app = express();
@@ -20,10 +21,11 @@ const port = 3000;
 // app.options('*', cors())
 
 //middleware
-app.use(authJwt());
+app.use(authJwt()); // auth token check for all app 
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
+app.use(errorHandler);
 
 //API routes
 app.use(`${API}/products`, productsRouter);
