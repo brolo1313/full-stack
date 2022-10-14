@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+// Import local styles.
+@import 'styles/normalize';
+@import "styles/base";
+@import "styles/typography";
+@import "styles/helpers";
+
+// Angular Material.
+@import "~@angular/material/prebuilt-themes/purple-green.css";
